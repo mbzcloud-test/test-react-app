@@ -31,10 +31,10 @@ jobs:
 
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v3
-        # with:
-        #   name: build
-        #   path: .
-        #   retention-days: 5
+        with:
+          #name: build
+          path: .
+          retention-days: 5
 
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
