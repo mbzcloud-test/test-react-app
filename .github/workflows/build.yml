@@ -38,6 +38,10 @@ jobs:
 
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
-        with:
-          #name: build
-          path: src
+        id: download
+        # with:
+        #   #name: build
+        #   path: src
+
+      - name: "Echo download path"
+        run: echo ${{steps.download.outputs.download-path}}
