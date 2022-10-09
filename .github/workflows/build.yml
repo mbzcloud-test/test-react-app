@@ -45,3 +45,15 @@ jobs:
 
       - name: "Echo download path"
         run: echo ${{steps.download.outputs.download-path}}
+
+      - name: Deploy
+        uses: manzoorwanijk/action-deploy-to-repo@master
+        with:
+          src_dir: build
+          target_owner: mbzcloud-test
+          target_repo: react-app
+          target_dir: distdir
+          target_branch: main # default
+          # Optional
+          access_token: ${{ secrets.GH_PACKAGE_PAT }}
+          cleanup_command: "rm -rf assets/* && rm -f assets/asset-manifest.json"
