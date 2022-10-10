@@ -51,9 +51,9 @@ jobs:
         with:
           src_dir: build
           target_owner: mbzcloud-test
-          target_repo: react-builds
-          target_dir: web-client
-          target_branch: main # default
+          target_repo: test-react-app
+          target_dir: infrastructure/web-client
+          target_branch: build-artf
           # Optional
           access_token: ${{ secrets.GH_PACKAGE_PAT }}
           cleanup_command: "rm -rf assets/* && rm -f assets/asset-manifest.json"
