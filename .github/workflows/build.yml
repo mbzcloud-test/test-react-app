@@ -65,4 +65,4 @@ jobs:
           target_branch: build-artf
           # Optional
           access_token: ${{ secrets.GH_PACKAGE_PAT }}
-          cleanup_command: "rm -rf assets/* && rm -f assets/asset-manifest.json"
+          cleanup_command: "rm -rf infrastructure"
