@@ -16,14 +16,6 @@ jobs:
         node-version: [16.x]
 
     steps:
-      #       - uses: actions/checkout@v3
-      #       - name: Use Node.js ${{ matrix.node-version }} and Build 📦
-      #       - run: npm ci --ignore-scripts
-      #       - run: npm i @mbzcloud-test/mbzcloud-web-comp@latest
-      #       - run: npm run build --if-present
-      #         env:
-      #           GITHUB_PKG_AUTH_TOKEN: ${{ secrets.GH_PACKAGE_PAT }}
-
       - name: Clone repository 🔍
         uses: actions/checkout@v3
         with:
@@ -45,32 +37,32 @@ jobs:
 
       #- run: npm test
 
-      # - name: "Upload Artifact"
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     #name: build
-      #     path: build
-      #     retention-days: 5
+      - name: "Upload Artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          #name: build
+          path: build
+          retention-days: 5
 
-      # - name: Download all workflow run artifacts
-      #   uses: actions/download-artifact@v3
-      #   id: download
-      #   # with:
-      #   #   #name: build
-      #   #   path: src
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v3
+        id: download
+        # with:
+        #   #name: build
+        #   path: src
 
-      # - name: "Echo download path"
-      #   run: echo ${{steps.download.outputs.download-path}}
+      - name: "Echo download path"
+        run: echo ${{steps.download.outputs.download-path}}
 
-      # # Store artifacts to other repo
-      # - name: Deploy to other repo
-      #   uses: manzoorwanijk/action-deploy-to-repo@master
-      #   with:
-      #     src_dir: build
-      #     target_owner: mbzcloud-test
-      #     target_repo: test-react-app
-      #     target_dir: infrastructure/web-client
-      #     target_branch: build-artf
-      #     # Optional
-      #     access_token: ${{ secrets.GH_PACKAGE_PAT }}
-      #     cleanup_command: "rm -rf assets/* && rm -f assets/asset-manifest.json"
+      # Store artifacts to other repo
+      - name: Deploy to other repo
+        uses: manzoorwanijk/action-deploy-to-repo@master
+        with:
+          src_dir: build
+          target_owner: mbzcloud-test
+          target_repo: test-react-app
+          target_dir: infrastructure/web-client
+          target_branch: build-artf
+          # Optional
+          access_token: ${{ secrets.GH_PACKAGE_PAT }}
+          cleanup_command: "rm -rf assets/* && rm -f assets/asset-manifest.json"
