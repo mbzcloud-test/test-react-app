@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import sum, { greetings } from "@mbzcloud-test/mbzcloud-web-comp";
+import greetings from "@mbzcloud-test/mbzcloud-web-comp";
+import sum from "@mbzcloud-test/mbzcloud-web-comp";
 import multiply from "@mbzcloud-test/mbzcloud-web-comp";
 import subtract from "@mbzcloud-test/mbzcloud-web-comp";
 
