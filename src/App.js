@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import sum, { greetings } from "@mbzcloud-test/mbzcloud-web-comp";
 import multiply from "@mbzcloud-test/mbzcloud-web-comp";
+import subtract from "@mbzcloud-test/mbzcloud-web-comp";
 
 // use the latest github package
 //greetings();
@@ -9,6 +10,7 @@ console.log(greetings);
 
 console.log(sum(2, 2));
 console.log(multiply(2, 2));
+console.log(subtract(2, 2));
 
 function App() {
 	return (
